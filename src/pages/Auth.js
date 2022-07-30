@@ -36,27 +36,9 @@ const Auth = ({ setActive, setUser }) => {
           auth,
           email,
           password
-        ).then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          console.log(user)
-          setUser(user);
-          setActive("home");
-          navigate("/");
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          if(errorMessage==='Firebase: Error (auth/wrong-password).') {
-            return toast.error("Wrong Password");
-          }
-          if(errorMessage==='Firebase: Error (auth/user-not-found).') {
-            return toast.error("User Not Found");
-          }
-          //console.log(errorMessage);
-        });
-        
+        );
+        setUser(user);
+        setActive("home");
       } else {
         return toast.error("All fields are mandatory to fill");
       }
