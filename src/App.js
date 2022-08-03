@@ -54,7 +54,7 @@ function App() {
         <Route
           path="/create"
           element={
-            user?.uid ? <AddEditBlog user={user} /> : <Navigate to="/" />
+            user?.uid ? <AddEditBlog user={user} /> : <Navigate to="/auth" />
           }
         />
         <Route

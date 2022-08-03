@@ -13,6 +13,7 @@ import Spinner from "../components/Spinner";
 import { db } from "../firebase";
 import { toast } from "react-toastify";
 import Tags from "../components/Tags";
+import MostPopular from "../components/MostPopular";
 import Trending from "../components/Trending";
 
 const Home = ({ setActive, user }) => {
@@ -92,6 +93,7 @@ const Home = ({ setActive, user }) => {
           </div>
           <div className="col-md-3">
             <Tags tags={tags} />
+            <MostPopular blogs={blogs} />
           </div>
         </div>
       </div>
